@@ -93,9 +93,258 @@ void kmap_print(int itotal_variabel, int* aiSOP){
     }
 }
 
-//* Cetak Fungsi (Kasar)
-void fungsi_kasar_print(int ijenis_input, int* aiSOP, int* aiPOS){
-    
+//* 3. Cetak Fungsi (Kasar)
+void fungsi_kasar_print(int ijenis_input, int ibit, int* aiSOP, int* aiPOS){
+    int a, b, c, sum;
+    // 3a. SOP
+    for(a=0; a < ibit; a++){
+        if(aiSOP[a] == 1){
+            sum+=1;
+        }
+    }
+    if(ijenis_input == 1){
+        if(ibit == 4){
+            printf("F(x1,x2) =\n");
+            for(b=0; b < ibit; b++){
+                if(aiSOP[a] == 1){
+                    sum-=1;
+                }
+                if(aiSOP[0] == 1){
+                    printf("x1'x2'");
+                }
+                if(aiSOP[1] == 1){
+                    printf("x1'x2");
+                }
+                if(aiSOP[2] == 1){
+                    printf("x1x2'");
+                }
+                if(aiSOP[3] == 1){
+                    printf("x1x2");
+                }
+                if(sum != 0){
+                    printf(" + ");
+                }     
+            }
+        }
+        else if(ibit == 8){
+            printf("F(x1,x2,x3) =\n");
+            for(b=0; b < ibit; b++){
+                if(aiSOP[a] == 1){
+                    sum-=1;
+                }
+                if(aiSOP[0] == 1){
+                    printf("x1'x2'x3'");
+                }
+                if(aiSOP[1] == 1){
+                    printf("x1'x2'x3");
+                }
+                if(aiSOP[2] == 1){
+                    printf("x1'x2x3'");
+                }
+                if(aiSOP[3] == 1){
+                    printf("x1'x2x3");
+                }
+                if(aiSOP[4] == 1){
+                    printf("x1x2'x3'");
+                }
+                if(aiSOP[5] == 1){
+                    printf("x1x2'x3");
+                }
+                if(aiSOP[6] == 1){
+                    printf("x1x2x3'");
+                }
+                if(aiSOP[7] == 1){
+                    printf("x1x2x3");
+                }
+                c = sum % 4;
+                if(c == 0){
+                    printf("\n");
+                }
+                if(sum != 0){
+                    printf(" + ");
+                }     
+            }
+
+        }
+        else if(ibit == 16){
+            printf("F(x1,x2,x3,x4) =\n");
+            for(b=0; b < ibit; b++){
+                if(aiSOP[a] == 1){
+                    sum-=1;
+                }
+                if(aiSOP[0] == 1){
+                    printf("x1'x2'x3'x4'");
+                }
+                if(aiSOP[1] == 1){
+                    printf("x1'x2'x3'x4");
+                }
+                if(aiSOP[2] == 1){
+                    printf("x1'x2'x3x4'");
+                }
+                if(aiSOP[3] == 1){
+                    printf("x1'x2'x3x4");
+                }
+                if(aiSOP[4] == 1){
+                    printf("x1'x2x3'x4'");
+                }
+                if(aiSOP[5] == 1){
+                    printf("x1'x2x3'x4");
+                }
+                if(aiSOP[6] == 1){
+                    printf("x1'x2x3x4'");
+                }
+                if(aiSOP[7] == 1){
+                    printf("x1'x2x3x4");
+                }
+                if(aiSOP[8] == 1){
+                    printf("x1x2'x3'x4'");
+                }
+                if(aiSOP[9] == 1){
+                    printf("x1x2'x3'x4");
+                }
+                if(aiSOP[10] == 1){
+                    printf("x1x2'x3x4'");
+                }
+                if(aiSOP[11] == 1){
+                    printf("x1x2'x3x4");
+                }
+                if(aiSOP[12] == 1){
+                    printf("x1x2x3'x4'");
+                }
+                if(aiSOP[13] == 1){
+                    printf("x1x2x3'x4");
+                }
+                if(aiSOP[14] == 1){
+                    printf("x1x2x3x4'");
+                }
+                if(aiSOP[15] == 1){
+                    printf("x1x2x3x4");
+                }
+                c = sum % 4;
+                if(c == 0){
+                    printf("\n");
+                }
+                if(sum != 0){
+                    printf(" + ");
+                }
+            }
+        }
+    }
+    // 3b. POS
+    else{
+        if(ibit == 4){
+        printf("F(x1,x2) =\n");
+            if(aiSOP[0] == 1){
+                printf("(x1'+x2')");
+            }
+            if(aiSOP[1] == 1){
+                    printf("(x1'+x2)");
+            }
+            if(aiSOP[2] == 1){
+                printf("(x1+x2')");
+            }
+            if(aiSOP[3] == 1){
+                printf("(x1+x2)");
+            } 
+        }
+        else if(ibit == 8){
+            printf("F(x1,x2,x3) =\n");
+            for(b=0; b < ibit; b++){
+                if(aiSOP[a] == 1){
+                    sum-=1;
+                }
+                if(aiSOP[0] == 1){
+                printf("(x1'+x2'+x3')");
+                }
+                if(aiSOP[1] == 1){
+                    printf("(x1'+x2'+x3)");
+                }
+                if(aiSOP[2] == 1){
+                   printf("(x1'+x2+x3')");
+                }
+                if(aiSOP[3] == 1){
+                    printf("(x1'+x2+x3)");
+                }
+                if(aiSOP[4] == 1){
+                    printf("(x1+x2'+x3')");
+                }
+                if(aiSOP[5] == 1){
+                    printf("(x1+x2'+x3)");
+                }
+                if(aiSOP[6] == 1){
+                    printf("(x1+x2+x3')");
+                }
+                if(aiSOP[7] == 1){
+                    printf("(x1+x2+x3)");
+                }
+                c = sum % 4;
+                if(c == 0){
+                    printf("\n");
+                }
+            }     
+        }
+        else if(ibit == 16){
+            printf("F(x1,x2,x3,x4) =\n");
+            for(b=0; b < ibit; b++){
+                if(aiSOP[a] == 1){
+                    sum-=1;
+                }
+                if(aiSOP[0] == 1){
+                    printf("(x1'+x2'+x3'+x4')");
+                }
+                if(aiSOP[1] == 1){
+                    printf("(x1'+x2'+x3'+x4)");
+                }
+                if(aiSOP[2] == 1){
+                    printf("(x1'+x2'+x3+x4')");
+                }
+                if(aiSOP[3] == 1){
+                    printf("(x1'+x2'+x3+x4");
+                }
+                if(aiSOP[4] == 1){
+                    printf("(x1'+x2+x3'+x4')");
+                }
+                if(aiSOP[5] == 1){
+                    printf("(x1'+x2+x3'+x4");
+                }
+                if(aiSOP[6] == 1){
+                    printf("(x1'+x2+x3+x4')");
+                }
+                if(aiSOP[7] == 1){
+                    printf("(x1'+x2+x3+x4");
+                }
+                if(aiSOP[8] == 1){
+                    printf("(x1+x2'+x3'+x4')");
+                }
+                if(aiSOP[9] == 1){                    
+                    printf("(x1+x2'+x3'+x4");
+                }
+                if(aiSOP[10] == 1){
+                    printf("(x1+x2'+x3+x4')");                
+                }
+                if(aiSOP[11] == 1){
+                    printf("(x1+x2'+x3+x4");
+                }
+                if(aiSOP[12] == 1){
+                    printf("(x1+x2+x3'+x4')");
+                }
+                if(aiSOP[13] == 1){
+                    printf("(x1+x2+x3'+x4");
+                    }                
+                if(aiSOP[14] == 1){
+                    printf("(x1+x2+x3+x4')");
+                }
+                if(aiSOP[15] == 1){
+                    printf("(x1+x2+x3+x4");
+                }
+                c = sum % 4;
+                if(c == 0){
+                    printf("\n");
+                }
+            }
+        }
+    }  
+    printf("\n");
 }
 
 //* Program Utama
@@ -109,7 +358,9 @@ int main(){
     printf("Logic Minimization dalam C\n");
     printf("Masukkan jumlah variabel (maks. 4): ");
     scanf("%d", itotal_variabel);
-    ibit = square(itotal_variabel);
+
+    // bit = 2^(total variabel)
+    ibit = pow(2, itotal_variabel);
     
     // Jenis Input Array SOP/POS
     printf("Jenis Input: \n");
